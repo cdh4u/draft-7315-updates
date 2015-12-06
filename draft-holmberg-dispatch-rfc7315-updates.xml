@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- comment -->
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd"[]>
+<?rfc toc="yes" ?>
+<?rfc compact="yes" ?>
+<?rfc sortrefs="no" ?>
+<rfc ipr="trust200902" category="info" docName="draft-holmberg-dispatch-rfc7315-updates-00" updates="7315" submissionType="IETF" xml:lang="en">
+  <front>
+    <title abbrev="7315 Updates">
+		P-Access-Network-Info in SIP ACK requests
+	</title>
+    <author fullname="Christer Holmberg" initials="C.H." surname="Holmberg">
+      <organization abbrev="Ericsson">Ericsson</organization>
+      <address>
+        <postal>
+          <street>Hirsalantie 11</street>
+          <city>Jorvas</city>
+          <region></region>
+          <code>02420</code>
+          <country>Finland</country>
+        </postal>
+        <phone></phone>
+        <email>christer.holmberg@ericsson.com</email>
+      </address>
+    </author> 
+    <author initials="G.S" surname="Salgueiro" fullname="Gonzalo Salgueiro">
+        <organization abbrev="Cisco">Cisco Systems, Inc.</organization>
+        <address>
+			<postal>
+				<street>7200-12 Kit Creek Road</street>
+				<city>Research Triangle Park</city>
+				<region>NC</region>
+				<code>27709</code>
+				<country>US</country>
+			</postal>
+			<email>gsalguei@cisco.com</email>
+		</address>
+	</author>
+	
+    <date year="2015" />
+    <area>Transport</area>
+    <keyword>7315</keyword>
+	<keyword>P-</keyword>
+	<keyword>3GPP</keyword>
+	<keyword>IMS</keyword>
+    <abstract>
+        <t>
+            3GPP has identified cases where different SIP P-prefixed header fields, defined
+            in RFC 7315, need to be included in SIP requests and responses currently not
+            allowed according to RFC 7315. This document updates RFC 7315, in order to allow
+            inclusion of the affected P- header fields in such requests and responses.
+        </t>
+        <t>
+            In order to get a complete picture, this document also contains a set of erratas 
+            that are to be filed against RFC 7315, in order to fix misalignments that occured
+            when RFC 3455 was updated and obsoleted by RFC 7315.
+        </t>
+    </abstract>
+</front>
+
+<middle>
+    <section title="Introduction">
+        <t>
+            The 3rd-Generation Partnership Project (3GPP) has identified cases where different
+            Session Initiation Protocol (SIP) <xref target="RFC3261" pageno="false" format="default"/> 
+            P-prefixed header fields, defined in RFC 7315 <xref target="RFC7315" pageno="false" format="default"/>, 
+            need to be included in SIP requests and responses currently not allowed according to RFC 7315. 
+            This document updates RFC 7315, in order to allow inclusion of the affected P- header fields 
+            in such requests and responses.
+        </t>
+        <t>
+            In order to get a complete picture, this document also contains a set of erratas 
+            that are to be filed against RFC 7315, in order to fix misalignments that occured
+            when RFC 3455 was updated and obsoleted by RFC 7315.
+        </t>
+
+        <t>
+            This document updates RFC 7315 <xref target="RFC7315" pageno="false" 
+            format="default"/>, by allowing the insertion of the
+            P-Access-Network-Info header field in SIP ACK requests.
+        </t>
+        <t>
+            As the P- prefixed header field are mainly used in (and in most cases, only defined for) 
+            networks defined by the 3rd-Generation Partnership Project (3GPP), where the updates
+            defined in this document are already defined <xref target="TS.3GPP.24.229" 
+            pageno="false" format="default"/>, the updates are not seen to cause backward 
+            compatibility concerns.
+        </t>
+    </section>
+		
+    <section title="Conventions">
+		<t>
+			The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+			"SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+			document are to be interpreted as described in <xref target="RFC2119"></xref>.
+		</t>
+    </section>
+    <section title="Errata to RFC 7315">
+			<t>
+                This section defines the errata that is to be submitted against RFC 7315. The scope
+                of the errata is only alignment between RFC 3455 and RFC 7315.
+            </t>
+            <figure>
+				<artwork align="left"><![CDATA[
+                
+Old text:
+
+5.7.  New Headers
+
+   The P-Associated-URI header field can appear in SIP REGISTER method
+   and 2xx resonses.  The P-Called-Party-ID header field can appear in
+   SIP INVITE, OPTIONS, PUBLISH, SUBSCRIBE, and MESSAGE methods and all
+   responses.  The P-Visited-Network-ID header field can appear in all
+   SIP methods except ACK, BYE, and CANCEL and all responses. The
+   P-Access-Network-Info header field can appear in all SIP methods
+   except ACK and CANCEL.  The P-Charging-Vector header field can appear
+   in all SIP methods except CANCEL.  The P-Charging-Function-Addresses
+   header field can appear in all SIP methods except ACK and CANCEL.
+    
+
+New text:
+
+5.7.  New Headers
+
+   The P-Associated-URI header field can appear in SIP REGISTER
+   2xx responses. The P-Called-Party-ID header field can appear in
+   SIP INVITE, OPTIONS, REFER, SUBSCRIBE, and MESSAGE methods and in all
+   responses associated with those methods. The P-Visited-Network-ID header 
+   field can appear in all SIP methods except ACK, BYE, CANCEL, NOTIFY, 
+   PRACK, INFO and UPDATE.  The P-Access-Network-Info header field can 
+   appear in all SIP methods and responses, except in ACK and CANCEL methods 
+   and CANCEL responses.  The P-Charging-Vector header field can appear
+   in all SIP methods and responses, except in ACK and CANCEL methods and 
+   CANCEL responses. The P-Charging-Function-Addresses header field can 
+   appear in all SIP methods and responses, except in ACK and CANCEL methods 
+   and CANCEL responses.
+
+				]]></artwork>
+			</figure>
+    </section>
+    <section title="Update to RFC 7315">
+			<t>
+                This section updates section 5.7 of RFC 7315.
+            </t>
+            <t>
+                Note that the old text incorporates the fixes
+                done by the errata described above.
+            </t>
+            <figure>
+				<artwork align="left"><![CDATA[
+                
+Old text:
+
+5.7.  New Headers
+
+   The P-Associated-URI header field can appear in SIP REGISTER
+   2xx responses. The P-Called-Party-ID header field can appear in
+   SIP INVITE, OPTIONS, REFER, SUBSCRIBE, and MESSAGE methods and in all
+   responses associated with those methods. The P-Visited-Network-ID header 
+   field can appear in all SIP methods except ACK, BYE, CANCEL, NOTIFY, 
+   PRACK, INFO and UPDATE.  The P-Access-Network-Info header field can 
+   appear in all SIP methods and responses, except in ACK and CANCEL methods 
+   and CANCEL responses.  The P-Charging-Vector header field can appear
+   in all SIP methods and responses, except in ACK and CANCEL methods and 
+   CANCEL responses. The P-Charging-Function-Addresses header field can 
+   appear in all SIP methods and responses, except in ACK and CANCEL methods 
+   and CANCEL responses.
+    
+    
+New text:
+
+5.7.  New Headers
+
+   The P-Associated-URI header field can appear in SIP REGISTER
+   2xx responses. The P-Called-Party-ID header field can appear in
+   SIP INVITE, OPTIONS, SUBSCRIBE, and MESSAGE methods and in all
+   responses associated with those methods. The P-Visited-Network-ID header 
+   field can appear in all SIP methods except ACK, BYE, CANCEL, NOTIFY, 
+   PRACK, INFO and UPDATE.  The P-Access-Network-Info header field can 
+   appear in all SIP methods and responses, except in ACK and CANCEL methods 
+   and CANCEL responses.  The P-Charging-Vector header field can appear
+   in all SIP methods and responses, except in CANCEL methods and 
+   CANCEL responses. The P-Charging-Function-Addresses header field can 
+   appear in all SIP methods and responses, except in ACK and CANCEL methods 
+   and CANCEL responses.
+                
+				]]></artwork>
+			</figure>
+	</section>
+	
+	<section title="Security Considerations">
+		<t>
+            The security considerations for the P-Access-Network-Info header field
+            are defined in <xref format="default" pageno="false" target="RFC7315"/>.
+            The update defined in this document does not impact the security
+            considerations.
+		</t>
+	</section>
+
+	<section anchor="section.iana" title="IANA Considerations">
+        <t>
+            This document makes no requests from IANA.
+        </t>
+	</section>
+                   
+	<section title="Acknowledgments">
+		<t>
+            TBD
+		</t>
+	</section>
+		
+	<section title="Change Log">	
+		<t>[RFC EDITOR NOTE: Please remove this section when publishing]</t>
+        <t>Changes from draft-holmberg-dispatch-pani-ack-00
+			<list style="symbols">
+                <t>- Add text when version -01 is submitted.</t>
+			</list>
+		</t>		
+	</section>
+</middle>
+
+<back>
+    <references title="Normative References">
+		<?rfc include="reference.RFC.2119"?>
+		<?rfc include="reference.RFC.3261"?>
+        <?rfc include="reference.RFC.7315"?>
+        <reference anchor="TS.3GPP.24.229">
+			<front> 
+				<title>
+                    IP multimedia call control protocol based on Session Initiation Protocol (SIP)
+                    and Session Description Protocol (SDP);Stage 3
+                </title>
+				<author><organization>3GPP</organization></author>
+				<date year="2015" month="September" day="25"/>
+			</front> 
+			<seriesInfo value="24.229 13.3.1" name="3GPP TS"/> 
+			<format type="HTML" target="http://www.3gpp.org/ftp/Specs/html-info/24229.htm"/> 
+		</reference>
+    </references>
+</back>
+</rfc>
