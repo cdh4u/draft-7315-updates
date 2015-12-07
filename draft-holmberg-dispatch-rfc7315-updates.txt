@@ -205,7 +205,7 @@ New text:
    The P-Visited-Network-ID header field can appear in all SIP methods
    except ACK, BYE, CANCEL, NOTIFY, PRACK, INFO and UPDATE. The
    P-Access-Network-Info header field can appear in all SIP methods
-   and responses, except in ACK and CANCEL methods and CANCEL responses.
+   and responses, except in CANCEL methods and CANCEL responses.
    The P-Charging-Vector header field can appear in all SIP methods and
    responses, except in CANCEL methods and CANCEL responses. The
    P-Charging-Function-Addresses header field can appear in all
