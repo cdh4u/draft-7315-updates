@@ -10,19 +10,30 @@
 		P-Access-Network-Info in SIP ACK requests
 	</title>
     <author fullname="Christer Holmberg" initials="C.H." surname="Holmberg">
-      <organization abbrev="Ericsson">Ericsson</organization>
-      <address>
-        <postal>
-          <street>Hirsalantie 11</street>
-          <city>Jorvas</city>
-          <region></region>
-          <code>02420</code>
-          <country>Finland</country>
-        </postal>
-        <phone></phone>
-        <email>christer.holmberg@ericsson.com</email>
-      </address>
+        <organization abbrev="Ericsson">Ericsson</organization>
+        <address>
+            <postal>
+                <street>Hirsalantie 11</street>
+                <city>Jorvas</city>
+                <region></region>
+                <code>02420</code>
+                <country>Finland</country>
+            </postal>
+            <email>christer.holmberg@ericsson.com</email>
+        </address>
     </author> 
+    <author initials="N." surname="Biondic" fullname="Nevenka Biondic">
+        <organization>Ericsson</organization>
+        <address>
+            <postal>
+                <street>Krapinska 45</street>
+                <code>10002</code>
+                <city>Zagreb</city>
+                <country>Croatia</country>
+            </postal>
+            <email>nevenka.biondic@ericsson.com</email>
+        </address>
+    </author>
     <author initials="G.S" surname="Salgueiro" fullname="Gonzalo Salgueiro">
         <organization abbrev="Cisco">Cisco Systems, Inc.</organization>
         <address>
@@ -124,16 +135,16 @@ New text:
 
    The P-Associated-URI header field can appear in SIP REGISTER
    2xx responses. The P-Called-Party-ID header field can appear in
-   SIP INVITE, OPTIONS, REFER, SUBSCRIBE, and MESSAGE methods and in all
-   responses associated with those methods. The P-Visited-Network-ID header 
-   field can appear in all SIP methods except ACK, BYE, CANCEL, NOTIFY, 
-   PRACK, INFO and UPDATE.  The P-Access-Network-Info header field can 
-   appear in all SIP methods and responses, except in ACK and CANCEL methods 
-   and CANCEL responses.  The P-Charging-Vector header field can appear
-   in all SIP methods and responses, except in ACK and CANCEL methods and 
-   CANCEL responses. The P-Charging-Function-Addresses header field can 
-   appear in all SIP methods and responses, except in ACK and CANCEL methods 
-   and CANCEL responses.
+   SIP INVITE, OPTIONS, REFER, SUBSCRIBE, and MESSAGE methods. 
+   The P-Visited-Network-ID header field can appear in all SIP methods 
+   except ACK, BYE, CANCEL, NOTIFY, PRACK, INFO and UPDATE. The 
+   P-Access-Network-Info header field can appear in all SIP methods 
+   and responses, except in ACK and CANCEL methods and CANCEL responses. 
+   The P-Charging-Vector header field can appear in all SIP methods and 
+   responses, except in ACK and CANCEL methods and CANCEL responses. 
+   The P-Charging-Function-Addresses header field can appear in all 
+   SIP methods and responses, except in ACK and CANCEL methods and 
+   CANCEL responses.
 
 				]]></artwork>
 			</figure>
@@ -155,16 +166,16 @@ Old text:
 
    The P-Associated-URI header field can appear in SIP REGISTER
    2xx responses. The P-Called-Party-ID header field can appear in
-   SIP INVITE, OPTIONS, REFER, SUBSCRIBE, and MESSAGE methods and in all
-   responses associated with those methods. The P-Visited-Network-ID header 
-   field can appear in all SIP methods except ACK, BYE, CANCEL, NOTIFY, 
-   PRACK, INFO and UPDATE.  The P-Access-Network-Info header field can 
-   appear in all SIP methods and responses, except in ACK and CANCEL methods 
-   and CANCEL responses.  The P-Charging-Vector header field can appear
-   in all SIP methods and responses, except in ACK and CANCEL methods and 
-   CANCEL responses. The P-Charging-Function-Addresses header field can 
-   appear in all SIP methods and responses, except in ACK and CANCEL methods 
-   and CANCEL responses.
+   SIP INVITE, OPTIONS, REFER, SUBSCRIBE, and MESSAGE methods. 
+   The P-Visited-Network-ID header field can appear in all SIP methods 
+   except ACK, BYE, CANCEL, NOTIFY, PRACK, INFO and UPDATE. The 
+   P-Access-Network-Info header field can appear in all SIP methods 
+   and responses, except in ACK and CANCEL methods and CANCEL responses. 
+   The P-Charging-Vector header field can appear in all SIP methods and 
+   responses, except in ACK and CANCEL methods and CANCEL responses. 
+   The P-Charging-Function-Addresses header field can appear in all 
+   SIP methods and responses, except in ACK and CANCEL methods and 
+   CANCEL responses.
     
     
 New text:
@@ -173,15 +184,15 @@ New text:
 
    The P-Associated-URI header field can appear in SIP REGISTER
    2xx responses. The P-Called-Party-ID header field can appear in
-   SIP INVITE, OPTIONS, SUBSCRIBE, and MESSAGE methods and in all
-   responses associated with those methods. The P-Visited-Network-ID header 
-   field can appear in all SIP methods except ACK, BYE, CANCEL, NOTIFY, 
-   PRACK, INFO and UPDATE.  The P-Access-Network-Info header field can 
-   appear in all SIP methods and responses, except in ACK and CANCEL methods 
-   and CANCEL responses.  The P-Charging-Vector header field can appear
-   in all SIP methods and responses, except in CANCEL methods and 
-   CANCEL responses. The P-Charging-Function-Addresses header field can 
-   appear in all SIP methods and responses, except in ACK and CANCEL methods 
+   SIP INVITE, OPTIONS, REFER, SUBSCRIBE, and MESSAGE methods. 
+   The P-Visited-Network-ID header field can appear in all SIP methods 
+   except ACK, BYE, CANCEL, NOTIFY, PRACK, INFO and UPDATE. The 
+   P-Access-Network-Info header field can appear in all SIP methods 
+   and responses, except in ACK and CANCEL methods and CANCEL responses. 
+   The P-Charging-Vector header field can appear in all SIP methods and 
+   responses, except in CANCEL methods and CANCEL responses. The 
+   P-Charging-Function-Addresses header field can appear in all 
+   SIP methods and responses, except in ACK and CANCEL methods 
    and CANCEL responses.
                 
 				]]></artwork>
@@ -211,7 +222,7 @@ New text:
 		
 	<section title="Change Log">	
 		<t>[RFC EDITOR NOTE: Please remove this section when publishing]</t>
-        <t>Changes from draft-holmberg-dispatch-pani-ack-00
+        <t>Changes from draft-holmberg-dispatch-rfc7315-updates-00
 			<list style="symbols">
                 <t>- Add text when version -01 is submitted.</t>
 			</list>

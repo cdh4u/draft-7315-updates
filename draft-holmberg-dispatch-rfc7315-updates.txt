@@ -2,10 +2,11 @@
 
 
 Network Working Group                                        C. Holmberg
-Internet-Draft                                                  Ericsson
-Updates: 7315 (if approved)                                 G. Salgueiro
-Intended status: Informational                                     Cisco
-Expires: June 8, 2016                                   December 6, 2015
+Internet-Draft                                                N. Biondic
+Updates: 7315 (if approved)                                     Ericsson
+Intended status: Informational                              G. Salgueiro
+Expires: June 9, 2016                                              Cisco
+                                                        December 7, 2015
 
 
                P-Access-Network-Info in SIP ACK requests
@@ -39,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on June 8, 2016.
+   This Internet-Draft will expire on June 9, 2016.
 
 Copyright Notice
 
@@ -48,15 +49,15 @@ Copyright Notice
 
    This document is subject to BCP 78 and the IETF Trust's Legal
    Provisions Relating to IETF Documents
-   (http://trustee.ietf.org/license-info) in effect on the date of
 
 
 
-Holmberg & Salgueiro      Expires June 8, 2016                  [Page 1]
+Holmberg, et al.          Expires June 9, 2016                  [Page 1]
 
 Internet-Draft                7315 Updates                 December 2015
 
 
+   (http://trustee.ietf.org/license-info) in effect on the date of
    publication of this document.  Please review these documents
    carefully, as they describe your rights and restrictions with respect
    to this document.  Code Components extracted from this document must
@@ -107,8 +108,7 @@ Table of Contents
 
 
 
-
-Holmberg & Salgueiro      Expires June 8, 2016                  [Page 2]
+Holmberg, et al.          Expires June 9, 2016                  [Page 2]
 
 Internet-Draft                7315 Updates                 December 2015
 
@@ -147,16 +147,16 @@ New text:
 
    The P-Associated-URI header field can appear in SIP REGISTER
    2xx responses. The P-Called-Party-ID header field can appear in
-   SIP INVITE, OPTIONS, REFER, SUBSCRIBE, and MESSAGE methods and in all
-   responses associated with those methods. The P-Visited-Network-ID header
-   field can appear in all SIP methods except ACK, BYE, CANCEL, NOTIFY,
-   PRACK, INFO and UPDATE.  The P-Access-Network-Info header field can
-   appear in all SIP methods and responses, except in ACK and CANCEL methods
-   and CANCEL responses.  The P-Charging-Vector header field can appear
-   in all SIP methods and responses, except in ACK and CANCEL methods and
-   CANCEL responses. The P-Charging-Function-Addresses header field can
-   appear in all SIP methods and responses, except in ACK and CANCEL methods
-   and CANCEL responses.
+   SIP INVITE, OPTIONS, REFER, SUBSCRIBE, and MESSAGE methods.
+   The P-Visited-Network-ID header field can appear in all SIP methods
+   except ACK, BYE, CANCEL, NOTIFY, PRACK, INFO and UPDATE. The
+   P-Access-Network-Info header field can appear in all SIP methods
+   and responses, except in ACK and CANCEL methods and CANCEL responses.
+   The P-Charging-Vector header field can appear in all SIP methods and
+   responses, except in ACK and CANCEL methods and CANCEL responses.
+   The P-Charging-Function-Addresses header field can appear in all
+   SIP methods and responses, except in ACK and CANCEL methods and
+   CANCEL responses.
 
 
 
@@ -164,7 +164,7 @@ New text:
 
 
 
-Holmberg & Salgueiro      Expires June 8, 2016                  [Page 3]
+Holmberg, et al.          Expires June 9, 2016                  [Page 3]
 
 Internet-Draft                7315 Updates                 December 2015
 
@@ -183,16 +183,16 @@ Old text:
 
    The P-Associated-URI header field can appear in SIP REGISTER
    2xx responses. The P-Called-Party-ID header field can appear in
-   SIP INVITE, OPTIONS, REFER, SUBSCRIBE, and MESSAGE methods and in all
-   responses associated with those methods. The P-Visited-Network-ID header
-   field can appear in all SIP methods except ACK, BYE, CANCEL, NOTIFY,
-   PRACK, INFO and UPDATE.  The P-Access-Network-Info header field can
-   appear in all SIP methods and responses, except in ACK and CANCEL methods
-   and CANCEL responses.  The P-Charging-Vector header field can appear
-   in all SIP methods and responses, except in ACK and CANCEL methods and
-   CANCEL responses. The P-Charging-Function-Addresses header field can
-   appear in all SIP methods and responses, except in ACK and CANCEL methods
-   and CANCEL responses.
+   SIP INVITE, OPTIONS, REFER, SUBSCRIBE, and MESSAGE methods.
+   The P-Visited-Network-ID header field can appear in all SIP methods
+   except ACK, BYE, CANCEL, NOTIFY, PRACK, INFO and UPDATE. The
+   P-Access-Network-Info header field can appear in all SIP methods
+   and responses, except in ACK and CANCEL methods and CANCEL responses.
+   The P-Charging-Vector header field can appear in all SIP methods and
+   responses, except in ACK and CANCEL methods and CANCEL responses.
+   The P-Charging-Function-Addresses header field can appear in all
+   SIP methods and responses, except in ACK and CANCEL methods and
+   CANCEL responses.
 
 
 New text:
@@ -201,15 +201,15 @@ New text:
 
    The P-Associated-URI header field can appear in SIP REGISTER
    2xx responses. The P-Called-Party-ID header field can appear in
-   SIP INVITE, OPTIONS, SUBSCRIBE, and MESSAGE methods and in all
-   responses associated with those methods. The P-Visited-Network-ID header
-   field can appear in all SIP methods except ACK, BYE, CANCEL, NOTIFY,
-   PRACK, INFO and UPDATE.  The P-Access-Network-Info header field can
-   appear in all SIP methods and responses, except in ACK and CANCEL methods
-   and CANCEL responses.  The P-Charging-Vector header field can appear
-   in all SIP methods and responses, except in CANCEL methods and
-   CANCEL responses. The P-Charging-Function-Addresses header field can
-   appear in all SIP methods and responses, except in ACK and CANCEL methods
+   SIP INVITE, OPTIONS, REFER, SUBSCRIBE, and MESSAGE methods.
+   The P-Visited-Network-ID header field can appear in all SIP methods
+   except ACK, BYE, CANCEL, NOTIFY, PRACK, INFO and UPDATE. The
+   P-Access-Network-Info header field can appear in all SIP methods
+   and responses, except in ACK and CANCEL methods and CANCEL responses.
+   The P-Charging-Vector header field can appear in all SIP methods and
+   responses, except in CANCEL methods and CANCEL responses. The
+   P-Charging-Function-Addresses header field can appear in all
+   SIP methods and responses, except in ACK and CANCEL methods
    and CANCEL responses.
 
 
@@ -220,7 +220,7 @@ New text:
 
 
 
-Holmberg & Salgueiro      Expires June 8, 2016                  [Page 4]
+Holmberg, et al.          Expires June 9, 2016                  [Page 4]
 
 Internet-Draft                7315 Updates                 December 2015
 
@@ -243,7 +243,7 @@ Internet-Draft                7315 Updates                 December 2015
 
    [RFC EDITOR NOTE: Please remove this section when publishing]
 
-   Changes from draft-holmberg-dispatch-pani-ack-00
+   Changes from draft-holmberg-dispatch-rfc7315-updates-00
 
    o  - Add text when version -01 is submitted.
 
@@ -276,7 +276,7 @@ Internet-Draft                7315 Updates                 December 2015
 
 
 
-Holmberg & Salgueiro      Expires June 8, 2016                  [Page 5]
+Holmberg, et al.          Expires June 9, 2016                  [Page 5]
 
 Internet-Draft                7315 Updates                 December 2015
 
@@ -290,6 +290,15 @@ Authors' Addresses
    Finland
 
    Email: christer.holmberg@ericsson.com
+
+
+   Nevenka Biondic
+   Ericsson
+   Krapinska 45
+   Zagreb  10002
+   Croatia
+
+   Email: nevenka.biondic@ericsson.com
 
 
    Gonzalo Salgueiro
@@ -323,13 +332,4 @@ Authors' Addresses
 
 
 
-
-
-
-
-
-
-
-
-
-Holmberg & Salgueiro      Expires June 8, 2016                  [Page 6]
+Holmberg, et al.          Expires June 9, 2016                  [Page 6]
