@@ -56,14 +56,15 @@
 	<keyword>IMS</keyword>
     <abstract>
         <t>
-            3GPP has identified cases where different SIP P-prefixed header fields, defined
+            The 3rd-Generation Partnership Project 3GPP has identified cases where different 
+            SIP private header extensions referred to as P- header fields, defined
             in RFC 7315, need to be included in SIP requests and responses currently not
             allowed according to RFC 7315. This document updates RFC 7315, in order to allow
             inclusion of the affected P- header fields in such requests and responses.
         </t>
         <t>
-            In order to get a complete picture, this document also contains a set of erratas 
-            that are to be filed against RFC 7315, in order to fix misalignments that occured
+            In order to get a complete picture, this document also contains a set of errata 
+            that are to be filed against RFC 7315, in order to fix misalignments that occurred
             when RFC 3455 was updated and obsoleted by RFC 7315.
         </t>
     </abstract>
@@ -74,24 +75,25 @@
         <t>
             The 3rd-Generation Partnership Project (3GPP) has identified cases where different
             Session Initiation Protocol (SIP) <xref target="RFC3261" pageno="false" format="default"/> 
-            P-prefixed header fields, defined in RFC 7315 <xref target="RFC7315" pageno="false" format="default"/>, 
-            need to be included in SIP requests and responses currently not allowed according to RFC 7315. 
-            This document updates RFC 7315, in order to allow inclusion of the affected P- header fields 
+            private header extensions referred to as P- header fields, defined in RFC 7315 
+            <xref target="RFC7315" pageno="false" format="default"/>, need to be included in SIP 
+            requests and responses currently not allowed according to RFC 7315. This document updates 
+            RFC 7315, in order to allow inclusion of the affected P- header fields 
             in such requests and responses.
         </t>
         <t>
-            In order to get a complete picture, this document also contains a set of erratas 
-            that are to be filed against RFC 7315, in order to fix misalignments that occured
-            when RFC 3455 was updated and obsoleted by RFC 7315.
+            In order to get a complete picture, this document also contains a set of errata 
+            that are to be filed against RFC 7315, in order to fix misalignments that occurred
+            when RFC 3455 <xref format="default" pageno="false" target="RFC3455"/> was updated and 
+            obsoleted by RFC 7315.
         </t>
-
         <t>
             This document updates RFC 7315 <xref target="RFC7315" pageno="false" 
             format="default"/>, by allowing the insertion of the
             P-Access-Network-Info header field in SIP ACK requests.
         </t>
         <t>
-            As the P- prefixed header field are mainly used in (and in most cases, only defined for) 
+            As the P- header fields are mainly used in (and in most cases, only defined for) 
             networks defined by the 3rd-Generation Partnership Project (3GPP), where the updates
             defined in this document are already defined <xref target="TS.3GPP.24.229" 
             pageno="false" format="default"/>, the updates are not seen to cause backward 
@@ -107,9 +109,57 @@
 		</t>
     </section>
     <section title="Errata to RFC 7315">
+        <section title="General">
+            <t>
+                RFC 7315 contains contradicting statements regarding the 
+                usage of SIP P- header fields in SIP requests and responses, which leave 
+                the presence of the SIP P- header fields in the SIP requests and responses 
+                open to interpretation, and different implementations. Statements in 
+                section 5.7 are not aligned with the definitions and usage of the SIP P- 
+                header fields specified in section 4.
+            </t>
 			<t>
                 This section defines the errata that is to be submitted against RFC 7315. The scope
                 of the errata is only alignment between RFC 3455 and RFC 7315.
+            </t>
+            <t>
+                NOTE: In the case of the P-Called-Party-ID header field, allowing it in PUBLISH
+                requests was deliberately done in RFC 7315. It will therefore not be impacted
+                by the errata.
+            </t>
+        </section>
+        <section title="Correction to section 5.7 of RFC 7315">
+            <t>
+                The errata makes the following changes:
+                <list style="symbols">
+                    <t>
+                        P-Associated-URI: Remove statement that the header field can 
+                        appear in the SIP REGISTER method.
+                    </t>
+					<t>
+                        P-Called-Party-ID: Delete statement that the header 
+                        field can appear in SIP responses. Add statement that the P-Called-Party-ID 
+                        header field can appear in the SIP REFER method.
+					</t>
+					<t>
+                        P-Visited-Network-ID: Delete statement that the header 
+                        field can appear in SIP responses. Add statement that the P-Visited-Network-ID 
+                        header field cannot appear in the SIP NOTIFY, PRACK, INFO and UPDATE methods. 
+					</t>
+                    <t>
+                        P-Access-Network-Info: Add statement that header field can appear in 
+                        SIP responses.                     
+                    </t>
+					<t>
+                        P-Charging-Vector: Add statement that the header field can appear in SIP 
+                        responses. Add statement that the header field can not appear in the SIP ACK
+                        method.
+					</t>
+                    <t>
+                        P-Charging-Function-Addresses: Add statement that the P-Charging-Function-Addresses 
+                        header field can appear in SIP responses.
+                    </t>
+                </list>
             </t>
             <figure>
 				<artwork align="left"><![CDATA[
@@ -135,7 +185,7 @@ New text:
 
    The P-Associated-URI header field can appear in SIP REGISTER
    2xx responses. The P-Called-Party-ID header field can appear in
-   SIP INVITE, OPTIONS, REFER, SUBSCRIBE, and MESSAGE methods. 
+   SIP INVITE, OPTIONS, PUBLISH, REFER, SUBSCRIBE, and MESSAGE methods. 
    The P-Visited-Network-ID header field can appear in all SIP methods 
    except ACK, BYE, CANCEL, NOTIFY, PRACK, INFO and UPDATE. The 
    P-Access-Network-Info header field can appear in all SIP methods 
@@ -148,6 +198,7 @@ New text:
 
 				]]></artwork>
 			</figure>
+        </section>
     </section>
     <section title="Update to RFC 7315">
 			<t>
@@ -156,6 +207,17 @@ New text:
             <t>
                 Note that the old text incorporates the fixes
                 done by the errata described above.
+            </t>
+            <t>
+                The following updates are done:
+                <list style="symbols">
+					<t>
+                        P-Access-Network-Info: Add statement that the header field can appear in the SIP ACK method.
+					</t>
+					<t>
+                        P-Charging-Vector: Add statement that the header field can appear in the SIP ACK method.
+					</t>
+                </list>
             </t>
             <figure>
 				<artwork align="left"><![CDATA[
@@ -166,7 +228,7 @@ Old text:
 
    The P-Associated-URI header field can appear in SIP REGISTER
    2xx responses. The P-Called-Party-ID header field can appear in
-   SIP INVITE, OPTIONS, REFER, SUBSCRIBE, and MESSAGE methods. 
+   SIP INVITE, OPTIONS, PUBLISH, REFER, SUBSCRIBE, and MESSAGE methods. 
    The P-Visited-Network-ID header field can appear in all SIP methods 
    except ACK, BYE, CANCEL, NOTIFY, PRACK, INFO and UPDATE. The 
    P-Access-Network-Info header field can appear in all SIP methods 
@@ -184,7 +246,7 @@ New text:
 
    The P-Associated-URI header field can appear in SIP REGISTER
    2xx responses. The P-Called-Party-ID header field can appear in
-   SIP INVITE, OPTIONS, REFER, SUBSCRIBE, and MESSAGE methods. 
+   SIP INVITE, OPTIONS, PUBLISH, REFER, SUBSCRIBE, and MESSAGE methods. 
    The P-Visited-Network-ID header field can appear in all SIP methods 
    except ACK, BYE, CANCEL, NOTIFY, PRACK, INFO and UPDATE. The 
    P-Access-Network-Info header field can appear in all SIP methods 
@@ -248,5 +310,8 @@ New text:
 			<format type="HTML" target="http://www.3gpp.org/ftp/Specs/html-info/24229.htm"/> 
 		</reference>
     </references>
+    <references title="Informative References">	
+		<?rfc include="reference.RFC.3455"?>				
+	</references>
 </back>
 </rfc>
