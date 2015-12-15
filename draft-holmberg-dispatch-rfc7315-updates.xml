@@ -201,9 +201,79 @@ New text:
         </section>
     </section>
     <section title="Update to RFC 7315">
+        <section title="General">
 			<t>
-                This section updates section 5.7 of RFC 7315.
+                This section updates section 5.7 of RFC 7315, based on requirements
+                from 3GPP. This section contains the 3GPP use-cases behind the updates,
+                and the suggested changes.
             </t>
+        </section>
+        <section title="3GPP Use-cases">
+            <section title="P-Access-Network-Info">
+                <t>
+                    The P-Access-Network-Info header field may contain the Network 
+                    provided Location information (NPLI). The Network Provided Location 
+                    Information (NPLI) is described in 3GPP TS 23.228.
+                </t>
+                <t>
+                    A proxy in possession of appropriate information about the access 
+                    technology might insert a P-Access-Network-Info header field with its own 
+                    values. Such values are identified by the string "network-provided" defined 
+                    in RFC 7315. Based on operator policy and/or roaming 
+                    agreement, local time of visited network may be included.
+                </t>
+                <t>
+                    The CDRs generated within IMS have to contain the NPLI in order to 
+                    guarantee correct billing. When an IMS Session is modified the NPLI also 
+                    needs to be stored as the location of the user at the time when the 
+                    session is modified may generate a charging event. In case of a session 
+                    modification event at IMS, the NPLI needs to be provided:
+                    <list style="symbols">
+                        <t>
+                            when the bearer establishment is triggered, or
+                        </t>
+                        <t>
+                            at session release when the bearer deactivation is triggered, or
+                        </t>
+                        <t>
+                            when the bearer modification is triggered e.g. QoS modification for the 
+                            use of newly negotiated codec.
+                        </t>
+                    </list>
+                </t>
+                <t>
+                    In some scenarios, the bearer modification may be triggered by the proxy 
+                    upon reception of an SDP answer within SIP 2xx response to the SIP 
+                    INVITE request. In such case the NPLI needs to be provided within the SIP 
+                    ACK request. However, RFC 7315 does not allow the usage of 
+                    the P-Access-Network-Info header field in SIP ACK request.
+                </t>
+                <t>
+                    Upon reception of the SDP answer within SIP 2xx response on the 
+                    SIP INVITE request a proxy may initiate procedures to obtain the NPLI and 
+                    MAY include the P-Access-Network-Info header field with the NPLI in the 
+                    SIP ACK request.
+                </t>
+                <t>
+                    The P-Access-Network-Info header field shall not be included in SIP ACK
+                    requests triggered by a 3xx-6xx response.                
+                </t>
+            </section>
+            <section title="P-Charging-Vector">
+                <t>
+                    RFC 7315 does not allow the usage of the P-Charging-Vector 
+                    header field in SIP ACK request.
+                </t>
+                <t>
+                    The P-Charging-Vector header field can appear in the SIP ACK request.
+                </t>
+                <t>
+                    The P-Charging-Vector header field shall not be included in SIP ACK
+                    requests triggered by a 3xx-6xx response.                
+                </t>
+            </section>
+        </section>
+        <section title="Updates to section 5.7 of RFC 7315">
             <t>
                 Note that the old text incorporates the fixes
                 done by the errata described above.
@@ -259,6 +329,7 @@ New text:
                 
 				]]></artwork>
 			</figure>
+        </section>
 	</section>
 	
 	<section title="Security Considerations">
