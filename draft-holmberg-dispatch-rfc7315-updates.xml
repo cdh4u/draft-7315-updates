@@ -4,7 +4,7 @@
 <?rfc toc="yes" ?>
 <?rfc compact="yes" ?>
 <?rfc sortrefs="no" ?>
-<rfc ipr="trust200902" category="info" docName="draft-holmberg-dispatch-rfc7315-updates-01" updates="7315" submissionType="IETF" xml:lang="en">
+<rfc ipr="trust200902" category="info" docName="draft-holmberg-dispatch-rfc7315-updates-02" updates="7315" submissionType="IETF" xml:lang="en">
   <front>
     <title abbrev="7315 Updates">
 		RFC 7315 Updates
@@ -166,8 +166,6 @@
                 
 Old text:
 
-5.7.  New Headers
-
    The P-Associated-URI header field can appear in SIP REGISTER method
    and 2xx resonses.  The P-Called-Party-ID header field can appear in
    SIP INVITE, OPTIONS, PUBLISH, SUBSCRIBE, and MESSAGE methods and all
@@ -180,8 +178,6 @@ Old text:
     
 
 New text:
-
-5.7.  New Headers
 
    The P-Associated-URI header field can appear in SIP REGISTER
    2xx responses. The P-Called-Party-ID header field can appear in
@@ -294,8 +290,6 @@ New text:
                 
 Old text:
 
-5.7.  New Headers
-
    The P-Associated-URI header field can appear in SIP REGISTER
    2xx responses. The P-Called-Party-ID header field can appear in
    SIP INVITE, OPTIONS, PUBLISH, REFER, SUBSCRIBE, and MESSAGE methods. 
@@ -311,8 +305,6 @@ Old text:
     
     
 New text:
-
-5.7.  New Headers
 
    The P-Associated-URI header field can appear in SIP REGISTER
    2xx responses. The P-Called-Party-ID header field can appear in
@@ -355,6 +347,11 @@ New text:
 		
 	<section title="Change Log">	
 		<t>[RFC EDITOR NOTE: Please remove this section when publishing]</t>
+        <t>Changes from draft-holmberg-dispatch-rfc7315-updates-01
+			<list style="symbols">
+                <t>- Justification text for P-Access-Network-Info update added.</t>
+			</list>
+		</t>		
         <t>Changes from draft-holmberg-dispatch-rfc7315-updates-00
 			<list style="symbols">
                 <t>- Title corrected.</t>
