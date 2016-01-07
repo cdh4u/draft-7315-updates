@@ -4,7 +4,7 @@
 <?rfc toc="yes" ?>
 <?rfc compact="yes" ?>
 <?rfc sortrefs="no" ?>
-<rfc ipr="trust200902" category="info" docName="draft-holmberg-dispatch-rfc7315-updates-03" updates="7315" submissionType="IETF" xml:lang="en">
+<rfc ipr="trust200902" category="info" docName="draft-holmberg-dispatch-rfc7315-updates-04" updates="7315" submissionType="IETF" xml:lang="en">
   <front>
     <title abbrev="7315 Updates">
 		RFC 7315 Updates
@@ -48,7 +48,7 @@
 		</address>
 	</author>
 	
-    <date year="2015" />
+    <date year="2016" />
     <area>Transport</area>
     <keyword>7315</keyword>
 	<keyword>P-</keyword>
@@ -265,7 +265,7 @@ New text:
                 <t>
                     In the interconnection scenarios in multi operator environments, 
                     where one or more transit operators are between the originating and 
-                    terminating operator, the identities of involved transit operators are 
+                    terminating operator, the identities of the involved transit operators are 
                     represented by a transit-ioi parameter of the P-Charging-Vector 
                     header field.
                 </t>
@@ -276,7 +276,7 @@ New text:
                     independent decision for each request and could be made based on 
                     load, cost, percentage, time of day, and more. For this reason, it is 
                     necessary that the P-Charging-Vector header field, which carries
-                    the transit IOI information, is included in each SIP request and responses.
+                    the transit IOI information, is included in each SIP request and response.
                     However, RFC 7315 does not allow the usage of the P-Charging-
                     Vector header field in SIP ACK request.
                 </t>
@@ -369,6 +369,11 @@ New text:
 		
 	<section title="Change Log">	
 		<t>[RFC EDITOR NOTE: Please remove this section when publishing]</t>
+        <t>Changes from draft-holmberg-dispatch-rfc7315-updates-03
+			<list style="symbols">
+                <t>- Minor editorial corrections.</t>
+			</list>
+		</t>		
         <t>Changes from draft-holmberg-dispatch-rfc7315-updates-02
 			<list style="symbols">
                 <t>- Justification text for P-Charging-Vector update added.</t>
