@@ -4,7 +4,7 @@
 <?rfc toc="yes" ?>
 <?rfc compact="yes" ?>
 <?rfc sortrefs="no" ?>
-<rfc ipr="trust200902" category="info" docName="draft-holmberg-dispatch-rfc7315-updates-05" updates="7315" submissionType="IETF" xml:lang="en">
+<rfc ipr="trust200902" category="info" docName="draft-holmberg-dispatch-rfc7315-updates-06" updates="7315" submissionType="IETF" xml:lang="en">
   <front>
     <title abbrev="7315 Updates">
 		Updates to Private Header (P-Header) Extension Usage in Session Initiation Protocol (SIP) Requests/Responses
@@ -131,31 +131,31 @@
         </section>
         <section title="Misalignments">
             <t>
-                The following updates are needed in order to fix the misalignments between RFC 7315 and RFC 3245:
+                The following updates are needed in order to fix the misalignments between RFC 7315 and RFC 3455:
                 <list style="symbols">
                     <t>
                         P-Associated-URI: Remove statement that the header field can 
                         appear in the SIP REGISTER method.
                     </t>
-					<t>
+                    <t>
                         P-Called-Party-ID: Delete statement that the header 
                         field can appear in SIP responses. Add statement that the P-Called-Party-ID 
                         header field can appear in the SIP REFER method.
-					</t>
-					<t>
+                    </t>
+                    <t>
                         P-Visited-Network-ID: Delete statement that the header 
                         field can appear in SIP responses. Add statement that the P-Visited-Network-ID 
                         header field cannot appear in the SIP NOTIFY, PRACK, INFO and UPDATE methods. 
-					</t>
+                    </t>
                     <t>
                         P-Access-Network-Info: Add statement that header field can appear in 
                         SIP responses.                     
                     </t>
-					<t>
+                    <t>
                         P-Charging-Vector: Add statement that the header field can appear in SIP 
                         responses. Add statement that the header field can not appear in the SIP ACK
                         method.
-					</t>
+                    </t>
                     <t>
                         P-Charging-Function-Addresses: Add statement that the P-Charging-Function-Addresses 
                         header field can appear in SIP responses.
@@ -169,10 +169,12 @@
                     The following updates are needed in order to implement the 3GPP use-cases:
                         <list style="symbols">
                             <t>
-                                P-Access-Network-Info: Add statement that the header field can appear in the SIP ACK method.
+                                P-Access-Network-Info: Add statement that the header field can appear in the SIP ACK method
+                                when triggered by a SIP 2xx response.
                             </t>
                             <t>
-                                P-Charging-Vector: Add statement that the header field can appear in the SIP ACK method.
+                                P-Charging-Vector: Add statement that the header field can appear in the SIP ACK method
+                                when triggered by a SIP 2xx response.
                             </t>
                         </list>
                 </t>
@@ -228,7 +230,7 @@
                 </t>
                 <t>
                     The P-Access-Network-Info header field shall not be included in SIP ACK
-                    requests triggered by a 3xx-6xx response.                
+                    requests triggered by non-2xx responses.                
                 </t>
             </section>
             <section title="P-Charging-Vector">
@@ -263,7 +265,7 @@
                 </t>
                 <t>
                     The P-Charging-Vector header field shall not be included in SIP ACK
-                    requests triggered by a 3xx-6xx response.
+                    requests triggered by SIP non-2xx responses.
                 </t>
             </section>
         </section>
@@ -298,12 +300,13 @@ New text:
    The P-Visited-Network-ID header field can appear in all SIP methods 
    except ACK, BYE, CANCEL, NOTIFY, PRACK, INFO and UPDATE. The 
    P-Access-Network-Info header field can appear in all SIP methods 
-   and responses, except in CANCEL methods and CANCEL responses. 
-   The P-Charging-Vector header field can appear in all SIP methods and 
-   responses, except in CANCEL methods and CANCEL responses. The 
-   P-Charging-Function-Addresses header field can appear in all 
-   SIP methods and responses, except in ACK and CANCEL methods 
-   and CANCEL responses.
+   and non-100 responses, except in CANCEL methods, CANCEL responses 
+   and ACK methods triggered by non-2xx responses. The P-Charging-Vector 
+   header field can appear in all SIP methods and non-100 responses, 
+   except in CANCEL methods, CANCEL responses and ACK methods triggered 
+   by non-2xx responses. The P-Charging-Function-Addresses header field 
+   can appear in all SIP methods and non-100 responses, except in ACK 
+   and CANCEL methods and CANCEL responses.
                 
 				]]></artwork>
 			</figure>
@@ -338,18 +341,23 @@ New text:
 		
 	<section title="Change Log">	
 		<t>[RFC EDITOR NOTE: Please remove this section when publishing]</t>
+        <t>Changes from draft-holmberg-dispatch-rfc7315-updates-05
+		<list style="symbols">
+               	     <t>Editorial changes based on comments from Adam Roach.</t>
+		</list>
+	</t>		
         <t>Changes from draft-holmberg-dispatch-rfc7315-updates-04
-			<list style="symbols">
-                <t>- Errata removed. All changes defined as RFC 7315 updates.</t>
-                <t>- Title changed.</t>
-                <t>- Text added to the Security Considerations.</t>
-			</list>
-		</t>		
+	       <list style="symbols">
+                   <t>- Errata removed. All changes defined as RFC 7315 updates.</t>
+                   <t>- Title changed.</t>
+                   <t>- Text added to the Security Considerations.</t>
+	       </list>
+        </t>		
         <t>Changes from draft-holmberg-dispatch-rfc7315-updates-03
-			<list style="symbols">
-                <t>- Minor editorial corrections.</t>
-			</list>
-		</t>		
+	       <list style="symbols">
+                   <t>- Minor editorial corrections.</t>
+               </list>
+        </t>		
         <t>Changes from draft-holmberg-dispatch-rfc7315-updates-02
 			<list style="symbols">
                 <t>- Justification text for P-Charging-Vector update added.</t>
