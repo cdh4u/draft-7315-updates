@@ -4,7 +4,7 @@
 <?rfc toc="yes" ?>
 <?rfc compact="yes" ?>
 <?rfc sortrefs="no" ?>
-<rfc ipr="trust200902" category="info" docName="draft-holmberg-dispatch-rfc7315-updates-07" updates="7315" submissionType="IETF" xml:lang="en">
+<rfc ipr="trust200902" category="info" docName="draft-holmberg-dispatch-rfc7315-updates-08" updates="7315" submissionType="IETF" xml:lang="en">
   <front>
     <title abbrev="7315 Updates">Updates to Private Header (P-Header) Extension Usage in Session Initiation Protocol (SIP) Requests/Responses</title>
     <author fullname="Christer Holmberg" initials="C.H." surname="Holmberg">
@@ -136,22 +136,22 @@
                         appear in the SIP REGISTER method.
                     </t>
                     <t>
-                        P-Called-Party-ID: Delete statement that the header
+                        P-Called-Party-ID: Delete statement that the P-Called-Party-ID header
                         field can appear in SIP responses. Add statement that the P-Called-Party-ID
                         header field can appear in the SIP REFER method.
                     </t>
                     <t>
-                        P-Visited-Network-ID: Delete statement that the header
+                        P-Visited-Network-ID: Delete statement that the P-Visited-Network-ID header
                         field can appear in SIP responses. Add statement that the P-Visited-Network-ID
                         header field cannot appear in the SIP NOTIFY, PRACK, INFO and UPDATE methods.
                     </t>
                     <t>
-                        P-Access-Network-Info: Add statement that header field can appear in
-                        SIP responses.
+                        P-Access-Network-Info: Add statement that P-Access-Network-Info header
+                        field can appear in SIP responses.
                     </t>
                     <t>
-                        P-Charging-Vector: Add statement that the header field can appear in SIP
-                        responses. Add statement that the header field can not appear in the SIP ACK
+                        P-Charging-Vector: Add statement that the P-Charging-Vector header field can appear in SIP
+                        responses. Add statement that the P-Charging-Vector header field can not appear in the SIP ACK
                         method.
                     </t>
                     <t>
@@ -167,32 +167,33 @@
                     The following updates are needed in order to implement the 3GPP use-cases:
                         <list style="symbols">
                             <t>
-                                P-Access-Network-Info: Add statement that the header field can appear in the SIP ACK method
-                                when triggered by a SIP 2xx response.
+                                P-Access-Network-Info: Add statement that the P-Access-Network-Info
+                                header field can appear in the SIP ACK method when triggered by a SIP 2xx response.
                             </t>
                             <t>
-                                P-Charging-Vector: Add statement that the header field can appear in the SIP ACK method
-                                when triggered by a SIP 2xx response.
+                                P-Charging-Vector: Add statement that the P-Charging-Vector header field can
+                                appear in the SIP ACK method when triggered by a SIP 2xx response.
                             </t>
                         </list>
                 </t>
                 <t>
                     This following sections describe, for individual P- header fields, the 3GPP use-cases that
-                    are base for the updates.
+                    are the basis for the updates.
                 </t>
             </section>
             <section title="P-Access-Network-Info">
                 <t>
                     The P-Access-Network-Info header field may contain the Network
-                    provided Location information (NPLI). The Network Provided Location
-                    Information (NPLI) is described in 3GPP TS 23.228.
+                    Provided Location Information (NPLI). The Network Provided Location
+                    Information (NPLI) is described in 3GPP TS 23.228 <xref target="TS.3GPP.23.228"
+                    pageno="false" format="default"/>.
                 </t>
                 <t>
                     A proxy in possession of appropriate information about the access
                     technology might insert a P-Access-Network-Info header field with its own
                     values. Such values are identified by the string "network-provided" defined
-                    in RFC 7315. Based on operator policy and/or roaming
-                    agreement, local time of visited network may be included.
+                    in RFC 7315. Based on operator policy and/or roaming agreement, local time
+                    of visited network may be included.
                 </t>
                 <t>
                     The CDRs generated within IMS have to contain the NPLI in order to
@@ -315,13 +316,14 @@ New text:
     The security considerations for these P- header fields are defined in
     <xref format="default" pageno="false" target="RFC7315"/>. This specification
     allows some header fields to be present in messages where they were previously
-    not allowed, and the security considerations and assumptions (e.g. regarding
-    only sending information to trusted entities) also to those messages. In addition,
-    this specification also disallow some header fields to be present in message
+    not allowed, and the security considerations and assumptions described in
+    <xref format="default" pageno="false" target="RFC7315"/> (e.g. regarding only
+    sending information to trusted entities) also apply to those messages. In addition,
+    this specification also disallows some header fields to be present in messages
     where they were previously allowed. That does not cause any security issues,
     but implementations need to be aware that implementations may not have been
     updated according to this document, and take proper actions if a header field
-    occur, or does not occur, in a message where it should occur (or occurs in a
+    occurs, or does not occur, in a message where it should occur (or occurs in a
     message where it should not occur). This document adds the ability to include
     P-Access-Network-Info in ACK requests. As documented in <xref format="default"
     pageno="false" target="RFC7315"/>, P-Access-Network-Info may include privacy
@@ -346,6 +348,13 @@ New text:
 
 	<section title="Change Log">
 		<t>[RFC EDITOR NOTE: Please remove this section when publishing]</t>
+    <t>Changes from draft-holmberg-dispatch-rfc7315-updates-07
+       <list style="symbols">
+       <t>Editorial changes in the Security Considerations based on secdir comments from Steve Hanna.</t>
+       <t>Editorial changes based on genart comments from Ralph Droms.</t>
+       <t>Reference to 3GPP TS 23.228 based on genart comments from Ralph Droms.</t>
+       </list>
+    </t>
     <t>Changes from draft-holmberg-dispatch-rfc7315-updates-06
        <list style="symbols">
        <t>Changes based on AD comments from Ben Campbell.</t>
@@ -391,17 +400,28 @@ New text:
     <references title="Normative References">
 		<?rfc include="reference.RFC.2119"?>
 		<?rfc include="reference.RFC.3261"?>
-        <?rfc include="reference.RFC.7315"?>
-        <reference anchor="TS.3GPP.24.229">
+    <?rfc include="reference.RFC.7315"?>
+    <reference anchor="TS.3GPP.23.228">
 			<front>
 				<title>
-                    IP multimedia call control protocol based on Session Initiation Protocol (SIP)
-                    and Session Description Protocol (SDP);Stage 3
-                </title>
+          IP multimedia call control protocol based on Session Initiation Protocol (SIP)
+          and Session Description Protocol (SDP);Stage 3
+        </title>
 				<author><organization>3GPP</organization></author>
-				<date year="2015" month="September" day="25"/>
+				<date year="2016" month="June" day="22"/>
 			</front>
-			<seriesInfo value="24.229 13.3.1" name="3GPP TS"/>
+			<seriesInfo value="23.228 13.6.0" name="3GPP TS"/>
+			<format type="HTML" target="http://www.3gpp.org/ftp/Specs/html-info/23228.htm"/>
+		</reference>
+    <reference anchor="TS.3GPP.24.229">
+			<front>
+				<title>
+           IP Multimedia Subsystem (IMS); Stage 2
+        </title>
+				<author><organization>3GPP</organization></author>
+				<date year="2016" month="June" day="24"/>
+			</front>
+			<seriesInfo value="24.229 13.6.0" name="3GPP TS"/>
 			<format type="HTML" target="http://www.3gpp.org/ftp/Specs/html-info/24229.htm"/>
 		</reference>
     </references>
