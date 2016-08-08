@@ -4,7 +4,7 @@
 <?rfc toc="yes" ?>
 <?rfc compact="yes" ?>
 <?rfc sortrefs="no" ?>
-<rfc ipr="trust200902" category="info" docName="draft-holmberg-dispatch-rfc7315-updates-08" updates="7315" submissionType="IETF" xml:lang="en">
+<rfc ipr="trust200902" category="info" docName="draft-holmberg-dispatch-rfc7315-updates-09" updates="7315" submissionType="IETF" xml:lang="en">
   <front>
     <title abbrev="7315 Updates">Updates to Private Header (P-Header) Extension Usage in Session Initiation Protocol (SIP) Requests/Responses</title>
     <author fullname="Christer Holmberg" initials="C.H." surname="Holmberg">
@@ -178,7 +178,8 @@
                 </t>
                 <t>
                     This following sections describe, for individual P- header fields, the 3GPP use-cases that
-                    are the basis for the updates.
+                    are the basis for the updates. The use-cases are based on the procedures defined in
+                    <xref target="TS.3GPP.24.229" pageno="false" format="default"/>.
                 </t>
             </section>
             <section title="P-Access-Network-Info">
@@ -224,7 +225,7 @@
                 <t>
                     Upon reception of the SDP answer within SIP 2xx response on the
                     SIP INVITE request a proxy may initiate procedures to obtain the NPLI and
-                    MAY include the P-Access-Network-Info header field with the NPLI in the
+                    may include the P-Access-Network-Info header field with the NPLI in the
                     SIP ACK request.
                 </t>
                 <t>
@@ -259,7 +260,7 @@
                 </t>
                 <t>
                     A SIP proxy that supports this extension and receives the SIP ACK
-                    request MAY include a P-Charging-Vector header field in the SIP
+                    request may include a P-Charging-Vector header field in the SIP
                     ACK request.
                 </t>
                 <t>
@@ -348,6 +349,11 @@ New text:
 
 	<section title="Change Log">
 		<t>[RFC EDITOR NOTE: Please remove this section when publishing]</t>
+    <t>Changes from draft-holmberg-dispatch-rfc7315-updates-08
+       <list style="symbols">
+       <t>Editorial changes based on IESG review of Mirja Kuhlewind.</t>
+       </list>
+    </t>
     <t>Changes from draft-holmberg-dispatch-rfc7315-updates-07
        <list style="symbols">
        <t>Editorial changes in the Security Considerations based on secdir comments from Steve Hanna.</t>

@@ -5,13 +5,13 @@ Network Working Group                                        C. Holmberg
 Internet-Draft                                                N. Biondic
 Updates: 7315 (if approved)                                     Ericsson
 Intended status: Informational                              G. Salgueiro
-Expires: January 20, 2017                                          Cisco
-                                                           July 19, 2016
+Expires: February 9, 2017                                          Cisco
+                                                          August 8, 2016
 
 
     Updates to Private Header (P-Header) Extension Usage in Session
               Initiation Protocol (SIP) Requests/Responses
-               draft-holmberg-dispatch-rfc7315-updates-08
+               draft-holmberg-dispatch-rfc7315-updates-09
 
 Abstract
 
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 20, 2017.
+   This Internet-Draft will expire on February 9, 2017.
 
 Copyright Notice
 
@@ -52,9 +52,9 @@ Copyright Notice
 
 
 
-Holmberg, et al.        Expires January 20, 2017                [Page 1]
+Holmberg, et al.        Expires February 9, 2017                [Page 1]
 
-Internet-Draft                7315 Updates                     July 2016
+Internet-Draft                7315 Updates                   August 2016
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -79,7 +79,7 @@ Table of Contents
        3.3.2.  P-Access-Network-Info . . . . . . . . . . . . . . . .   4
        3.3.3.  P-Charging-Vector . . . . . . . . . . . . . . . . . .   5
    4.  Updates to RFC 7315 . . . . . . . . . . . . . . . . . . . . .   6
-   5.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
+   5.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
    7.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .   7
    8.  Change Log  . . . . . . . . . . . . . . . . . . . . . . . . .   7
@@ -108,9 +108,9 @@ Table of Contents
 
 
 
-Holmberg, et al.        Expires January 20, 2017                [Page 2]
+Holmberg, et al.        Expires February 9, 2017                [Page 2]
 
-Internet-Draft                7315 Updates                     July 2016
+Internet-Draft                7315 Updates                   August 2016
 
 
    already defined [TS.3GPP.24.229], the updates are not seen to cause
@@ -164,9 +164,9 @@ Internet-Draft                7315 Updates                     July 2016
 
 
 
-Holmberg, et al.        Expires January 20, 2017                [Page 3]
+Holmberg, et al.        Expires February 9, 2017                [Page 3]
 
-Internet-Draft                7315 Updates                     July 2016
+Internet-Draft                7315 Updates                   August 2016
 
 
       the P-Visited-Network-ID header field cannot appear in the SIP
@@ -198,7 +198,8 @@ Internet-Draft                7315 Updates                     July 2016
       response.
 
    This following sections describe, for individual P- header fields,
-   the 3GPP use-cases that are the basis for the updates.
+   the 3GPP use-cases that are the basis for the updates.  The use-cases
+   are based on the procedures defined in [TS.3GPP.24.229].
 
 3.3.2.  P-Access-Network-Info
 
@@ -215,15 +216,17 @@ Internet-Draft                7315 Updates                     July 2016
    The CDRs generated within IMS have to contain the NPLI in order to
    guarantee correct billing.  When an IMS Session is modified the NPLI
    also needs to be stored as the location of the user at the time when
+
+
+
+
+Holmberg, et al.        Expires February 9, 2017                [Page 4]
+
+Internet-Draft                7315 Updates                   August 2016
+
+
    the session is modified may generate a charging event.  In case of a
    session modification event at IMS, the NPLI needs to be provided:
-
-
-
-Holmberg, et al.        Expires January 20, 2017                [Page 4]
-
-Internet-Draft                7315 Updates                     July 2016
-
 
    o  when the bearer establishment is triggered, or
 
@@ -240,7 +243,7 @@ Internet-Draft                7315 Updates                     July 2016
 
    Upon reception of the SDP answer within SIP 2xx response on the SIP
    INVITE request a proxy may initiate procedures to obtain the NPLI and
-   MAY include the P-Access-Network-Info header field with the NPLI in
+   may include the P-Access-Network-Info header field with the NPLI in
    the SIP ACK request.
 
    The P-Access-Network-Info header field shall not be included in SIP
@@ -269,17 +272,18 @@ Internet-Draft                7315 Updates                     July 2016
    response.  However, RFC 7315 does not allow the usage of the
    P-Charging- Vector header field in SIP ACK request.
 
-   A SIP proxy that supports this extension and receives the SIP ACK
-   request MAY include a P-Charging-Vector header field in the SIP ACK
-   request.
 
 
 
 
-Holmberg, et al.        Expires January 20, 2017                [Page 5]
+Holmberg, et al.        Expires February 9, 2017                [Page 5]
 
-Internet-Draft                7315 Updates                     July 2016
+Internet-Draft                7315 Updates                   August 2016
 
+
+   A SIP proxy that supports this extension and receives the SIP ACK
+   request may include a P-Charging-Vector header field in the SIP ACK
+   request.
 
    The P-Charging-Vector header field shall not be included in SIP ACK
    requests triggered by SIP non-2xx responses.
@@ -321,6 +325,18 @@ New text:
    and CANCEL methods and CANCEL responses.
 
 
+
+
+
+
+
+
+
+Holmberg, et al.        Expires February 9, 2017                [Page 6]
+
+Internet-Draft                7315 Updates                   August 2016
+
+
 5.  Security Considerations
 
    The security considerations for these P- header fields are defined in
@@ -329,14 +345,6 @@ New text:
    security considerations and assumptions described in [RFC7315] (e.g.
    regarding only sending information to trusted entities) also apply to
    those messages.  In addition, this specification also disallows some
-
-
-
-Holmberg, et al.        Expires January 20, 2017                [Page 6]
-
-Internet-Draft                7315 Updates                     July 2016
-
-
    header fields to be present in messages where they were previously
    allowed.  That does not cause any security issues, but
    implementations need to be aware that implementations may not have
@@ -363,6 +371,10 @@ Internet-Draft                7315 Updates                     July 2016
 
    [RFC EDITOR NOTE: Please remove this section when publishing]
 
+   Changes from draft-holmberg-dispatch-rfc7315-updates-08
+
+   o  Editorial changes based on IESG review of Mirja Kuhlewind.
+
    Changes from draft-holmberg-dispatch-rfc7315-updates-07
 
    o  Editorial changes in the Security Considerations based on secdir
@@ -372,6 +384,14 @@ Internet-Draft                7315 Updates                     July 2016
 
    o  Reference to 3GPP TS 23.228 based on genart comments from Ralph
       Droms.
+
+
+
+
+Holmberg, et al.        Expires February 9, 2017                [Page 7]
+
+Internet-Draft                7315 Updates                   August 2016
+
 
    Changes from draft-holmberg-dispatch-rfc7315-updates-06
 
@@ -384,14 +404,6 @@ Internet-Draft                7315 Updates                     July 2016
    o  Editorial changes based on comments from Adam Roach.
 
    Changes from draft-holmberg-dispatch-rfc7315-updates-04
-
-
-
-
-Holmberg, et al.        Expires January 20, 2017                [Page 7]
-
-Internet-Draft                7315 Updates                     July 2016
-
 
    o  - Errata removed.  All changes defined as RFC 7315 updates.
 
@@ -430,6 +442,13 @@ Internet-Draft                7315 Updates                     July 2016
               DOI 10.17487/RFC3261, June 2002,
               <http://www.rfc-editor.org/info/rfc3261>.
 
+
+
+Holmberg, et al.        Expires February 9, 2017                [Page 8]
+
+Internet-Draft                7315 Updates                   August 2016
+
+
    [RFC7315]  Jesske, R., Drage, K., and C. Holmberg, "Private Header
               (P-Header) Extensions to the Session Initiation Protocol
               (SIP) for the 3GPP", RFC 7315, DOI 10.17487/RFC7315, July
@@ -439,15 +458,6 @@ Internet-Draft                7315 Updates                     July 2016
               3GPP, "IP multimedia call control protocol based on
               Session Initiation Protocol (SIP) and Session Description
               Protocol (SDP);Stage 3", 3GPP TS 23.228 13.6.0, June 2016.
-
-
-
-
-
-Holmberg, et al.        Expires January 20, 2017                [Page 8]
-
-Internet-Draft                7315 Updates                     July 2016
-
 
    [TS.3GPP.24.229]
               3GPP, "IP Multimedia Subsystem (IMS); Stage 2", 3GPP
@@ -481,6 +491,20 @@ Authors' Addresses
    Email: nevenka.biondic@ericsson.com
 
 
+
+
+
+
+
+
+
+
+
+Holmberg, et al.        Expires February 9, 2017                [Page 9]
+
+Internet-Draft                7315 Updates                   August 2016
+
+
    Gonzalo Salgueiro
    Cisco Systems, Inc.
    7200-12 Kit Creek Road
@@ -500,4 +524,36 @@ Authors' Addresses
 
 
 
-Holmberg, et al.        Expires January 20, 2017                [Page 9]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Holmberg, et al.        Expires February 9, 2017               [Page 10]
