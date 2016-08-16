@@ -5,8 +5,8 @@ Network Working Group                                        C. Holmberg
 Internet-Draft                                                N. Biondic
 Updates: 7315 (if approved)                                     Ericsson
 Intended status: Informational                              G. Salgueiro
-Expires: February 9, 2017                                          Cisco
-                                                          August 8, 2016
+Expires: February 17, 2017                                         Cisco
+                                                         August 16, 2016
 
 
     Updates to Private Header (P-Header) Extension Usage in Session
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 9, 2017.
+   This Internet-Draft will expire on February 17, 2017.
 
 Copyright Notice
 
@@ -52,7 +52,7 @@ Copyright Notice
 
 
 
-Holmberg, et al.        Expires February 9, 2017                [Page 1]
+Holmberg, et al.        Expires February 17, 2017               [Page 1]
 
 Internet-Draft                7315 Updates                   August 2016
 
@@ -70,22 +70,21 @@ Internet-Draft                7315 Updates                   August 2016
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
-   2.  Conventions . . . . . . . . . . . . . . . . . . . . . . . . .   3
-   3.  Misalignments and 3GPP use-cases  . . . . . . . . . . . . . .   3
-     3.1.  General . . . . . . . . . . . . . . . . . . . . . . . . .   3
-     3.2.  Misalignments . . . . . . . . . . . . . . . . . . . . . .   3
-     3.3.  3GPP Use-cases  . . . . . . . . . . . . . . . . . . . . .   4
-       3.3.1.  General . . . . . . . . . . . . . . . . . . . . . . .   4
-       3.3.2.  P-Access-Network-Info . . . . . . . . . . . . . . . .   4
-       3.3.3.  P-Charging-Vector . . . . . . . . . . . . . . . . . .   5
-   4.  Updates to RFC 7315 . . . . . . . . . . . . . . . . . . . . .   6
-   5.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
-   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
-   7.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .   7
-   8.  Change Log  . . . . . . . . . . . . . . . . . . . . . . . . .   7
-   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   8
-     9.1.  Normative References  . . . . . . . . . . . . . . . . . .   8
-     9.2.  Informative References  . . . . . . . . . . . . . . . . .   9
+   2.  Misalignments and 3GPP use-cases  . . . . . . . . . . . . . .   3
+     2.1.  General . . . . . . . . . . . . . . . . . . . . . . . . .   3
+     2.2.  Misalignments . . . . . . . . . . . . . . . . . . . . . .   3
+     2.3.  3GPP Use-cases  . . . . . . . . . . . . . . . . . . . . .   4
+       2.3.1.  General . . . . . . . . . . . . . . . . . . . . . . .   4
+       2.3.2.  P-Access-Network-Info . . . . . . . . . . . . . . . .   4
+       2.3.3.  P-Charging-Vector . . . . . . . . . . . . . . . . . .   5
+   3.  Updates to RFC 7315 . . . . . . . . . . . . . . . . . . . . .   6
+   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
+   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
+   6.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .   7
+   7.  Change Log  . . . . . . . . . . . . . . . . . . . . . . . . .   7
+   8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   8
+     8.1.  Normative References  . . . . . . . . . . . . . . . . . .   8
+     8.2.  Informative References  . . . . . . . . . . . . . . . . .   9
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   9
 
 1.  Introduction
@@ -108,7 +107,8 @@ Table of Contents
 
 
 
-Holmberg, et al.        Expires February 9, 2017                [Page 2]
+
+Holmberg, et al.        Expires February 17, 2017               [Page 2]
 
 Internet-Draft                7315 Updates                   August 2016
 
@@ -116,15 +116,9 @@ Internet-Draft                7315 Updates                   August 2016
    already defined [TS.3GPP.24.229], the updates are not seen to cause
    backward compatibility concerns.
 
-2.  Conventions
+2.  Misalignments and 3GPP use-cases
 
-   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-   document are to be interpreted as described in [RFC2119].
-
-3.  Misalignments and 3GPP use-cases
-
-3.1.  General
+2.1.  General
 
    RFC 7315 contains contradicting statements regarding the usage of SIP
    P- header fields in SIP requests and responses, which leave the
@@ -144,10 +138,10 @@ Internet-Draft                7315 Updates                   August 2016
    behind the updates, and the updates needed to RFC 7315 in order to
    support the use-cases.
 
-   Section 4 updates RFC 7315, based on the misalignments and 3GPP use-
+   Section 3 updates RFC 7315, based on the misalignments and 3GPP use-
    cases.
 
-3.2.  Misalignments
+2.2.  Misalignments
 
    The following updates are needed in order to fix the misalignments
    between RFC 7315 and RFC 3455:
@@ -161,19 +155,19 @@ Internet-Draft                7315 Updates                   August 2016
 
    o  P-Visited-Network-ID: Delete statement that the P-Visited-Network-
       ID header field can appear in SIP responses.  Add statement that
-
-
-
-Holmberg, et al.        Expires February 9, 2017                [Page 3]
-
-Internet-Draft                7315 Updates                   August 2016
-
-
       the P-Visited-Network-ID header field cannot appear in the SIP
       NOTIFY, PRACK, INFO and UPDATE methods.
 
    o  P-Access-Network-Info: Add statement that P-Access-Network-Info
       header field can appear in SIP responses.
+
+
+
+
+Holmberg, et al.        Expires February 17, 2017               [Page 3]
+
+Internet-Draft                7315 Updates                   August 2016
+
 
    o  P-Charging-Vector: Add statement that the P-Charging-Vector header
       field can appear in SIP responses.  Add statement that the P-
@@ -182,9 +176,9 @@ Internet-Draft                7315 Updates                   August 2016
    o  P-Charging-Function-Addresses: Add statement that the P-Charging-
       Function-Addresses header field can appear in SIP responses.
 
-3.3.  3GPP Use-cases
+2.3.  3GPP Use-cases
 
-3.3.1.  General
+2.3.1.  General
 
    The following updates are needed in order to implement the 3GPP use-
    cases:
@@ -201,7 +195,7 @@ Internet-Draft                7315 Updates                   August 2016
    the 3GPP use-cases that are the basis for the updates.  The use-cases
    are based on the procedures defined in [TS.3GPP.24.229].
 
-3.3.2.  P-Access-Network-Info
+2.3.2.  P-Access-Network-Info
 
    The P-Access-Network-Info header field may contain the Network
    Provided Location Information (NPLI).  The Network Provided Location
@@ -216,21 +210,20 @@ Internet-Draft                7315 Updates                   August 2016
    The CDRs generated within IMS have to contain the NPLI in order to
    guarantee correct billing.  When an IMS Session is modified the NPLI
    also needs to be stored as the location of the user at the time when
-
-
-
-
-Holmberg, et al.        Expires February 9, 2017                [Page 4]
-
-Internet-Draft                7315 Updates                   August 2016
-
-
    the session is modified may generate a charging event.  In case of a
    session modification event at IMS, the NPLI needs to be provided:
 
    o  when the bearer establishment is triggered, or
 
    o  at session release when the bearer deactivation is triggered, or
+
+
+
+
+Holmberg, et al.        Expires February 17, 2017               [Page 4]
+
+Internet-Draft                7315 Updates                   August 2016
+
 
    o  when the bearer modification is triggered e.g.  QoS modification
       for the use of newly negotiated codec.
@@ -249,7 +242,7 @@ Internet-Draft                7315 Updates                   August 2016
    The P-Access-Network-Info header field shall not be included in SIP
    ACK requests triggered by non-2xx responses.
 
-3.3.3.  P-Charging-Vector
+2.3.3.  P-Charging-Vector
 
    RFC 7315 defines an Inter Operator Identifier (IOI) to enable
    different operators involved in a SIP dialog or a transaction outside
@@ -272,15 +265,6 @@ Internet-Draft                7315 Updates                   August 2016
    response.  However, RFC 7315 does not allow the usage of the
    P-Charging- Vector header field in SIP ACK request.
 
-
-
-
-
-Holmberg, et al.        Expires February 9, 2017                [Page 5]
-
-Internet-Draft                7315 Updates                   August 2016
-
-
    A SIP proxy that supports this extension and receives the SIP ACK
    request may include a P-Charging-Vector header field in the SIP ACK
    request.
@@ -288,11 +272,20 @@ Internet-Draft                7315 Updates                   August 2016
    The P-Charging-Vector header field shall not be included in SIP ACK
    requests triggered by SIP non-2xx responses.
 
-4.  Updates to RFC 7315
+
+
+
+
+Holmberg, et al.        Expires February 17, 2017               [Page 5]
+
+Internet-Draft                7315 Updates                   August 2016
+
+
+3.  Updates to RFC 7315
 
    This section implements the update to section 5.7 of RFC 7315, in
    order to implement the misalignment fixes and the 3GPP requirements
-   described in Section 3.
+   described in Section 2.
 
 
 Old text:
@@ -325,19 +318,7 @@ New text:
    and CANCEL methods and CANCEL responses.
 
 
-
-
-
-
-
-
-
-Holmberg, et al.        Expires February 9, 2017                [Page 6]
-
-Internet-Draft                7315 Updates                   August 2016
-
-
-5.  Security Considerations
+4.  Security Considerations
 
    The security considerations for these P- header fields are defined in
    [RFC7315].  This specification allows some header fields to be
@@ -348,6 +329,14 @@ Internet-Draft                7315 Updates                   August 2016
    header fields to be present in messages where they were previously
    allowed.  That does not cause any security issues, but
    implementations need to be aware that implementations may not have
+
+
+
+Holmberg, et al.        Expires February 17, 2017               [Page 6]
+
+Internet-Draft                7315 Updates                   August 2016
+
+
    been updated according to this document, and take proper actions if a
    header field occurs, or does not occur, in a message where it should
    occur (or occurs in a message where it should not occur).  This
@@ -358,16 +347,16 @@ Internet-Draft                7315 Updates                   August 2016
    ACK requests are similar to those for the other SIP requests
    discussed in [RFC7315].
 
-6.  IANA Considerations
+5.  IANA Considerations
 
    This document makes no requests from IANA.
 
-7.  Acknowledgments
+6.  Acknowledgments
 
    Thanks to Paul Kyzivat, Jean Mahoney, Ben Campbell and Adam Roach for
    providing comments on the draft.
 
-8.  Change Log
+7.  Change Log
 
    [RFC EDITOR NOTE: Please remove this section when publishing]
 
@@ -385,14 +374,6 @@ Internet-Draft                7315 Updates                   August 2016
    o  Reference to 3GPP TS 23.228 based on genart comments from Ralph
       Droms.
 
-
-
-
-Holmberg, et al.        Expires February 9, 2017                [Page 7]
-
-Internet-Draft                7315 Updates                   August 2016
-
-
    Changes from draft-holmberg-dispatch-rfc7315-updates-06
 
    o  Changes based on AD comments from Ben Campbell.
@@ -404,6 +385,13 @@ Internet-Draft                7315 Updates                   August 2016
    o  Editorial changes based on comments from Adam Roach.
 
    Changes from draft-holmberg-dispatch-rfc7315-updates-04
+
+
+
+Holmberg, et al.        Expires February 17, 2017               [Page 7]
+
+Internet-Draft                7315 Updates                   August 2016
+
 
    o  - Errata removed.  All changes defined as RFC 7315 updates.
 
@@ -427,27 +415,15 @@ Internet-Draft                7315 Updates                   August 2016
 
    o  - Title corrected.
 
-9.  References
+8.  References
 
-9.1.  Normative References
-
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119,
-              DOI 10.17487/RFC2119, March 1997,
-              <http://www.rfc-editor.org/info/rfc2119>.
+8.1.  Normative References
 
    [RFC3261]  Rosenberg, J., Schulzrinne, H., Camarillo, G., Johnston,
               A., Peterson, J., Sparks, R., Handley, M., and E.
               Schooler, "SIP: Session Initiation Protocol", RFC 3261,
               DOI 10.17487/RFC3261, June 2002,
               <http://www.rfc-editor.org/info/rfc3261>.
-
-
-
-Holmberg, et al.        Expires February 9, 2017                [Page 8]
-
-Internet-Draft                7315 Updates                   August 2016
-
 
    [RFC7315]  Jesske, R., Drage, K., and C. Holmberg, "Private Header
               (P-Header) Extensions to the Session Initiation Protocol
@@ -463,7 +439,17 @@ Internet-Draft                7315 Updates                   August 2016
               3GPP, "IP Multimedia Subsystem (IMS); Stage 2", 3GPP
               TS 24.229 13.6.0, June 2016.
 
-9.2.  Informative References
+
+
+
+
+
+Holmberg, et al.        Expires February 17, 2017               [Page 8]
+
+Internet-Draft                7315 Updates                   August 2016
+
+
+8.2.  Informative References
 
    [RFC3455]  Garcia-Martin, M., Henrikson, E., and D. Mills, "Private
               Header (P-Header) Extensions to the Session Initiation
@@ -491,20 +477,6 @@ Authors' Addresses
    Email: nevenka.biondic@ericsson.com
 
 
-
-
-
-
-
-
-
-
-
-Holmberg, et al.        Expires February 9, 2017                [Page 9]
-
-Internet-Draft                7315 Updates                   August 2016
-
-
    Gonzalo Salgueiro
    Cisco Systems, Inc.
    7200-12 Kit Creek Road
@@ -528,32 +500,4 @@ Internet-Draft                7315 Updates                   August 2016
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Holmberg, et al.        Expires February 9, 2017               [Page 10]
+Holmberg, et al.        Expires February 17, 2017               [Page 9]
